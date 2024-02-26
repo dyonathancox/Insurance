@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%; /*divide o pixel por 10 para colocar medida em REM*/
+    --hue: 300;
+    --color-base-white: hsl(0, 0%, 100%);
+    --color-base-red: #FF5656;
+    --color-base-gray-100: #F2F2F2;
+    --color-base-gray: hsl(0, 14%, 52%);
+    --color-base-gray-line: #c4c4c4;
+}
+
+html, body {
+    width: 100%;
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+    color: var(--color-base-gray);
+    background-color: var(--color-base-gray-100);
+}
+#container h1{
+    text-align: center;
+    line-height: 1;
+    color: var(--color-base-red);
+    font-size: 3.2rem;
+    font-weight: normal;
+    color: var(--color-base-red);
+    padding-bottom: 4rem;
+}
+#container h1 span{
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-base-gray-line);
+    padding: .5rem;
+}
+#container p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.8rem;
+    line-height: 2;
+    color: var(--color-base-gray);
+}
+
+.header,
+.text,
+.about,
+.soluctions-wrapper,
+.form,
+.seguros {
+    width: min(128.0rem, 100%);
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.header {
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--color-base-gray);
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 0.8rem;
+    color: var(--color-base-red);
+    border: 1px solid var(--color-base-red);
+}
+
+nav img {
+    width: 10.0rem;
+    height: 5.0rem;
+    object-fit: cover; /*acerta img tamanho*/
+    border-radius: .5rem;
+}
+
+.text-container,
+.soluctions-container,
+.form-container{
+    width: 100%;
+    background-color: var(--color-base-white);
+}
+.text,
+.about {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.col-2{
+    width: 64rem;
+    display: flex;
+    flex-direction: column;
+}
+.text section,
+.about section {
+    width: 64rem;
+    gap: 1rem; /* Espaçamento entre os elementos */    
+}
+
+/*SOLUCTIONS*/
+.soluctions-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 8em;
+    justify-content: center;
+    gap: 2rem;
+}
+.soluctions-container,
+.seguros-container{
+    padding-top: 4rem;
+}
+
+.soluctions-wrapper section:nth-child(-n+2) {
+    margin-bottom: 10rem; /* Ajuste o valor do margin-bottom conforme necessário */
+}
+
+.container {
+    position: relative; /* Definir o posicionamento como relativo */
+    max-width: 30rem; /* Ajuste para ocupar toda a largura disponível */
+    height: 45rem;
+    border-radius: 2.5rem;
+    padding: 2rem;
+    align-items: center;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.square h2 {
+    margin-top: 7rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-base-red);
+    padding-bottom: 1.5rem;
+}
+
+.square p {
+    font-weight: 500;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 0; /* Remover margem superior */
+    margin-bottom: 1rem; /* Adicionar uma margem inferior fixa */
+}
+
+.circle {
+    position: absolute;
+    top: -8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--color-base-gray-100);
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*SEGURADORAS*/
+.seguros {
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
+    position: relative; /* Para os botões serem posicionados relativamente */
+}
+
+.scroll-left,
+.scroll-right {
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+.scroll-left img,
+.scroll-right img{
+    width: 3rem;
+}
+
+.seguros ul {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth; /*rolagem suave*/
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem; 
+    gap: 1.5rem;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.seguros ul::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem do navegador Chrome/Safari */
+}
+
+.seguros ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border-radius: 2rem;
+    height: 10rem;
+    padding: 1.5rem;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    flex: 0 0 20rem; /* Define o tamanho fixo dos itens para que todos tenham o mesmo tamanho */
+}
+
+.seguros ul li:last-child {
+    margin-right: 0; /* Remove o espaço à direita do último item */
+}
+
+.seguros ul li img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*FORMULÁRIO*/
+.form{
+    display: flex;
+}
+form{
+    width: 64rem;
+    margin-right: 1.5rem;
+}
+
+.col-3 {
+    display: flex;
+    gap: 20px;
+}
+  
+.col-3 > div:nth-child(1),
+.col-3 > div:nth-child(2){
+    width: 50%;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+  
+.input-wrapper label {
+    margin-left: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    color: var(--color-base-gray);
+    margin-bottom: 8px;
+}
+  
+.input-wrapper label span {
+    margin-left: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 2rem;  
+    color: #a9a7af;
+  }
+  
+.input-wrapper label span:hover {
+    color: #6c6a71;
+}
+  
+.input-wrapper input, 
+.input-wrapper textarea,
+.button{
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 3rem;
+    height: 5.6rem;
+    padding: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    color: var(--color-base-gray);
+
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.input-wrapper textarea {
+    padding: 2.4rem;
+    height: 168px;
+}
+
+.button{
+    margin-top: 2.5rem;
+    background: var(--color-base-red);
+    width: 100%;
+    height: 6rem;
+    padding: 0;
+    border: none;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+.button:hover{
+    background: #c04141;
+}
+
+.details-container {
+    width: 64rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+}
+    
+    
+.details{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-auto-rows: auto auto auto auto;
+    text-align: center;
+    
+}
+.details h2{
+    grid-column: 1 /span 2;
+    color: var(--color-base-red);
+    font-weight: bold;
+}
+.details p{
+    font-size: 1.4rem;
+    font-weight: 550;
+    text-align: left;
+}
+.details .icon{
+    width: 2.4rem;
+    height: 2.4rem;
+    place-self: center;
+}
+
+.details .icon:nth-of-type(1),
+.details .icon:nth-of-type(2),
+.details .icon:nth-of-type(3) {
+    grid-column: 1;
+}
+/*
+.details:nth-child(-n+2) {
+    
+    margin-bottom: 1.5rem; /* Ajuste o valor do margin-bottom conforme necessário 
+}*/
+
+
+
+
+input:invalid{
+    border: 1x solid red;
+}
+/*FOOTER*/
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: bold;
+}
+
+header{
+    --startY: -100%;
+    animation: move .2s;
+}
+
+footer {
+    animation: move .2s;
+    --startY: 100%;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+.item {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Adicione este código no final do seu arquivo CSS */
+
+/* Para telas com largura igual ou inferior a 320px */
+@media only screen and (max-width: 430px) {
+    .text-container,
+    .about-container,
+    .form-container {
+        position: relative; /* Define a posição como relativa */
+        padding: 1.5rem;
+    }
+
+    .col-2 {
+        position: absolute; /* Define a posição como absoluta */
+        top: 30%;
+        left: 50%; /* Alinha a imagem na metade da largura da div */
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        opacity: 0.5;
+        
+    }
+
+    .text section {
+        display: flex; /* Altera o layout para flexbox */
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        text-align: center; /* Centraliza o texto */
+    }
+    .scroll-left,
+    .scroll-right{
+        display: none;
+    }
+    #img-details {
+        display: none; /* Oculta as imagens dentro de .details-container */
+    }
+    .soluctions-container{
+        margin: auto;
+    }
+    .soluctions-wrapper {
+        padding: 8rem 1.5rem 0;
+        display: flex;
+        flex-wrap: nowrap; /* Impede que os itens quebrem em várias linhas */
+        justify-content: flex-start; /* Alinha os itens à esquerda */
+        gap: 2rem;
+        overflow-x: auto; /* Adiciona uma barra de rolagem horizontal */
+        max-width: calc(100% - 10rem); /* Limita a largura do contêiner para evitar que ultrapasse o viewport */
+    }
+    
+    .soluctions-wrapper section {
+        display: inline; /* Faz com que as seções se comportem como elementos de bloco inline */
+        margin-right: 20px; /* Adiciona um espaçamento entre as seções */
+    }
+    .container {
+        display: flex;
+        width: 40rem;
+        align-items: center; /* Alinha os itens verticalmente */
+    }
+    .seguros ul li{
+        height: 11rem;
+        flex: 0 0 25rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens horizontalmente */
+    }
+
+    .col-3 {
+        flex-direction: column;
+        gap: 0;
+    }
+      
+    .col-3 > div:nth-child(1),
+    .col-3 > div:nth-child(2) {
+        width: 100%; /* Define a largura de cada div como 100% para ocupar toda a largura disponível */
+    }
+
+    form,
+    .details-container {
+        width: 100%;
+        margin-right: 0;
+    }
+    .details-container,
+    .details{
+        padding-top: 5rem;
+    }
+}
