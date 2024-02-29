@@ -12,24 +12,40 @@
 </head>
 <body>
     <div id="container">
-        <header class="header-container">
-            <div class="header">
-                <nav>
-                    <img class="logo" src="assets/LOGO.png" alt="LOGO">
+        <header>                
+            <nav class="nav-bar">
+                <div class="logo">
+                    <h1>Logo</h1>
+                </div>
+                <div class="nav-list">
                     <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#sobre">SOBRE</a></li>
-                        <li><a href="#soluctions">SOLUÇÕES</a></li>
-                        <li><a href="#">CONTATO</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">INICIO</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">SOBRE</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">SOLUÇÕES</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">CONTATO</a></li>
                     </ul>
-                </nav>
+                </div>
+
+                <div class="mobile-menu-icon">
+                    <button onclick="menuShow()"><img class="icon" src="assets/menu.png" alt=""></button>
+                </div>    
+            </nav>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="#" class="nav-link">INICIO</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">SOBRE</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">SOLUÇÕES</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">CONTATO</a></li>
+                </ul>
             </div>
+            
         </header>
 
         <main>
             <div class="text-container">
                 
-                <div class="text">
+                <div class="text" id="geral">
 
                     <div class="col-2"><img src="assets/handshake-two-color.png" alt=""></div>
                     <section>
@@ -42,7 +58,7 @@
             </div>
             
             <div class="about-container" id="sobre">
-                <div class="about">
+                <div class="about" id="geral">
                     <section>
                         <h1><span>Sobre nós</span></h1>
                         <p>Há três décadas, uma empresa de corretora de seguros iniciava sua trajetória no mercado com o compromisso de oferecer proteção abrangente e confiável.</p>
@@ -57,7 +73,7 @@
 
                 <h1><span>Soluções</span></h1>
 
-                <div class="soluctions-wrapper">
+                <div class="soluctions-wrapper">                    
                     <section>
                         <div class="container">
                             <div class="circle"><img src="assets/agro.png" alt=""></div>
@@ -124,7 +140,7 @@
 
                 <h1><span>Principais Seguros</span></h1>
                 
-                <div class="seguros">
+                <div class="seguros" id="geral">
                     <div class="scroll-left">
                         <img src="assets/icons8-menor-que-52.png" alt="">
                     </div>
@@ -152,7 +168,7 @@
             </div>
 
             <div class="form-container">
-                <div class="form">
+                <div class="form" id="geral">
 
                     <form>
                         <h1><span>Entre em contato</span></h1>

@@ -44,43 +44,52 @@ html, body {
     color: var(--color-base-gray);
 }
 
-.header,
-.text,
-.about,
-.soluctions-wrapper,
-.form,
-.seguros {
+#geral,
+.soluctions-wrapper {
     width: min(128.0rem, 100%);
     margin: 0 auto;
     padding: 4rem 0;
 }
-
-.header {
-    height: 10rem;
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
+header{
+    position: relative;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente os elementos */
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
-nav {
-    width: 100%;
+.nav-bar{
+    width: min(128.0rem, 100%);
+    margin: auto;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+.logo {
+    display: flex;
     align-items: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 4rem;
+.logo h1 {
+    color: #fff;
 }
 
-nav ul a {
+.nav-list ul,
+.mobile-menu ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-list ul a,
+.mobile-menu ul a {
     text-decoration: none;
     color: var(--color-base-gray);
 }
 
-nav ul li a:hover {
+.nav-list ul li a:hover,
+.mobile-menu ul li a:hover {
     font-weight: bold;
     padding: 10px;
     border-radius: 0.8rem;
@@ -88,11 +97,11 @@ nav ul li a:hover {
     border: 1px solid var(--color-base-red);
 }
 
-nav img {
-    width: 10.0rem;
-    height: 5.0rem;
-    object-fit: cover; /*acerta img tamanho*/
-    border-radius: .5rem;
+.mobile-menu-icon{
+    display: none;
+}
+.mobile-menu{
+    display: none;
 }
 
 .text-container,
@@ -119,17 +128,20 @@ nav img {
 }
 
 /*SOLUCTIONS*/
+
 .soluctions-wrapper {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 8em;
+    padding-top: 10rem;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
+    position: relative;
 }
 .soluctions-container,
 .seguros-container{
-    padding-top: 4rem;
+    padding-top: 7rem;
 }
+
 
 .soluctions-wrapper section:nth-child(-n+2) {
     margin-bottom: 10rem; /* Ajuste o valor do margin-bottom conforme necessário */
@@ -320,8 +332,6 @@ form{
     flex-direction: column;
     gap: 2;
 }
-    
-    
 .details{
     display: grid;
     grid-template-columns: 0.1fr 1fr;
@@ -409,6 +419,42 @@ footer {
 
 /* Para telas com largura igual ou inferior a 320px */
 @media only screen and (max-width: 430px) {
+    .nav-bar {
+        padding: 1.5rem;
+        justify-content: end;
+    }
+    .nav-item {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.5rem;
+    }
+    .mobile-menu button {
+        width: 100%;
+    }
+    .open {
+        display: block;
+    }
+
+
     .text-container,
     .about-container,
     .form-container {
@@ -417,6 +463,7 @@ footer {
     }
 
     .col-2 {
+        width: 24rem;
         position: absolute; /* Define a posição como absoluta */
         top: 30%;
         left: 50%; /* Alinha a imagem na metade da largura da div */
@@ -431,16 +478,10 @@ footer {
         align-items: center; /* Centraliza os itens horizontalmente */
         text-align: center; /* Centraliza o texto */
     }
-    .scroll-left,
-    .scroll-right{
-        display: none;
-    }
     #img-details {
         display: none; /* Oculta as imagens dentro de .details-container */
     }
-    .soluctions-container{
-        margin: auto;
-    }
+
     .soluctions-wrapper {
         padding: 8rem 1.5rem 0;
         display: flex;
@@ -448,7 +489,7 @@ footer {
         justify-content: flex-start; /* Alinha os itens à esquerda */
         gap: 2rem;
         overflow-x: auto; /* Adiciona uma barra de rolagem horizontal */
-        max-width: calc(100% - 10rem); /* Limita a largura do contêiner para evitar que ultrapasse o viewport */
+        max-width: calc(100% - 4rem); /* Limita a largura do contêiner para evitar que ultrapasse o viewport */
     }
     
     .soluctions-wrapper section {
@@ -460,9 +501,14 @@ footer {
         width: 40rem;
         align-items: center; /* Alinha os itens verticalmente */
     }
+
     .seguros ul li{
         height: 11rem;
         flex: 0 0 25rem;
+    }
+    .scroll-left img,
+    .scroll-right img{
+        width: 2rem;
     }
 
     .form {
