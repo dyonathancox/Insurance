@@ -3,7 +3,6 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&amp;family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <meta charset="UTF-8">
@@ -21,9 +20,10 @@
                 <div class="nav-list">
                     <ul>
                         <li class="nav-item"><a href="#" class="nav-link">INICIO</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">SOBRE</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">SOLUÇÕES</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">CONTATO</a></li>
+                        <li class="nav-item"><a href="#sobre" class="nav-link">SOBRE</a></li>
+                        <li class="nav-item"><a href="#soluctions" class="nav-link">SOLUÇÕES</a></li>
+                        <li class="nav-item"><a href="#cia" class="nav-link">SEGURADORAS</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">CONTATO</a></li>
                     </ul>
                 </div>
 
@@ -35,9 +35,10 @@
             <div class="mobile-menu">
                 <ul>
                     <li class="nav-item"><a href="#" class="nav-link">INICIO</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">SOBRE</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">SOLUÇÕES</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">CONTATO</a></li>
+                    <li class="nav-item"><a href="#sobre" class="nav-link">SOBRE</a></li>
+                    <li class="nav-item"><a href="#soluctions" class="nav-link">SOLUÇÕES</a></li>
+                    <li class="nav-item"><a href="#cia" class="nav-link">SEGURADORAS</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">CONTATO</a></li>
                 </ul>
             </div>
             
@@ -137,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="seguros-container">
+            <div class="seguros-container" id="cia">
 
                 <h1><span>Principais Seguros</span></h1>
                 
@@ -168,45 +169,43 @@
                 </div>
             </div>
 
-            <div class="form-container">
+            <div class="form-container" id="contact">
                 <div class="form" id="geral">
 
-                    <form>
+                    <form method="post" action="processar_formulario.php">
                         <h1><span>Entre em contato</span></h1>
-                            <p>tamo metendo o loco e nem tamo sabeno</p>
-    
+                        <p>tamo metendo o loco e nem tamo sabeno</p>
+                    
                         <div class="col-3">
                             <div class="input-wrapper">
                                 <label for="event-name">Nome</label>
-                                <input type="text" id="event-name" placeholder="Digite seu nome" required>
+                                <input type="text" name="nome" id="event-name" placeholder="Digite seu nome" required>
                             </div>
-    
+                    
                             <div class="input-wrapper">
                                 <label for="event-sobrenome">Sobrenome</label>
-                                <input type="text" id="event-sobrenome" placeholder="Digite seu sobrenome" required>                        
+                                <input type="text" name="sobrenome" id="event-sobrenome" placeholder="Digite seu sobrenome" required>
                             </div>
                         </div>
-    
+                    
                         <div class="input-wrapper">
-                            <label for="event-phone" >Whatsapp para contato <span>(somente números)</span> </label>
-    
-                            <input type="tel" id="event-phone" required placeholder="Digite seu telefone">
-                        
+                            <label for="event-phone">Whatsapp para contato <span>(somente números)</span> </label>
+                            <input type="tel" name="telefone" id="event-phone" required placeholder="Digite seu telefone">
                         </div>
-    
+                    
                         <div class="input-wrapper">
                             <label for="event-mail">E-mail: <span>(digite um email válido)</span></label>
-                            <input type="email" id="event-mail" placeholder="Digite seu e-mail principal" required />
+                            <input type="email" name="email" id="event-mail" placeholder="Digite seu e-mail principal" required />
                         </div>
-    
+                    
                         <div class="input-wrapper">
                             <label for="event-info">Deixe sua mensagem</label>
-                            <textarea id="event-info" placeholder="Escreva a sua mensagem"></textarea>
-                        </div> 
-    
-                        <input class="button" form="my-form" type="submit" value="Enviar mensagem">
-    
+                            <textarea name="mensagem" id="event-info" placeholder="Escreva a sua mensagem"></textarea>
+                        </div>
+                    
+                        <input class="button" type="submit" value="Enviar mensagem">
                     </form>
+                    
                     
                     <div class="details-container">
                         <img id="img-details" src="assets/sent-messages-flatline.png" alt="">
@@ -216,7 +215,7 @@
                             <img class="icon" src="assets/location.png" alt="">
                             <p>R. Cel. Levino Ribeiro, 805 - Centro, Itapeva - SP, 18400-410</p>
                             <img class="icon" src="assets/phone.png" alt="">
-                            <p>(15) 3522-2888 // <a href="#">(15) 99162-6343</a></p>
+                            <p>(15) 3522-2888</p>
                             <img class="icon" src="assets/mail.png" alt="">
                             <p>lafer@laferseg.com.br</p>
                         </section>
@@ -232,14 +231,12 @@
                         </section> 
 
                         <ul class="wrapper">
-                            <li class="icon instagram">
-                              <span class="tooltip"><a href="#"></a>Instagram</span>
+                            
+                            <a href="#"><li class="icon instagram">
                               <span><i class="fab fa-instagram"></i></span>
                             </li>
                             
-                            <a href="https://api.whatsapp.com/send?phone=5515991666268
-                                    " target="_blank"><li class="icon whats">
-                                <span class="tooltip">Whatsapp</span>
+                            <a href="https://api.whatsapp.com/send?phone=5515991666268" target="_blank"><li class="icon whats">
                                 <span><i class="fab fa-whatsapp"></i></span>
                               </li>
                             </a>
