@@ -172,41 +172,40 @@
             <div class="form-container" id="contact">
                 <div class="form" id="geral">
 
-                    <form method="post" action="processar_formulario.php">
+                    <form action="email.php" method="post">
                         <h1><span>Entre em contato</span></h1>
                         <p>tamo metendo o loco e nem tamo sabeno</p>
-                    
                         <div class="col-3">
+
                             <div class="input-wrapper">
                                 <label for="event-name">Nome</label>
                                 <input type="text" name="nome" id="event-name" placeholder="Digite seu nome" required>
                             </div>
                     
                             <div class="input-wrapper">
-                                <label for="event-sobrenome">Sobrenome</label>
+                                <label for="$event-sobrenome">Sobrenome</label>
                                 <input type="text" name="sobrenome" id="event-sobrenome" placeholder="Digite seu sobrenome" required>
                             </div>
                         </div>
                     
                         <div class="input-wrapper">
-                            <label for="event-phone">Whatsapp para contato <span>(somente números)</span> </label>
-                            <input type="tel" name="telefone" id="event-phone" required placeholder="Digite seu telefone">
+                            <label for="event-telefone">Whatsapp para contato <span>(somente números)</span> </label>
+                            <input type="tel" name="telefone" id="telefone" required placeholder="Digite seu telefone">
                         </div>
                     
                         <div class="input-wrapper">
-                            <label for="event-mail">E-mail: <span>(digite um email válido)</span></label>
-                            <input type="email" name="email" id="event-mail" placeholder="Digite seu e-mail principal" required />
+                            <label for="event-email">E-mail: <span>(digite um email válido)</span></label>
+                            <input type="email" name="email" id="event-email" placeholder="Digite seu e-mail principal" required />
                         </div>
                     
                         <div class="input-wrapper">
-                            <label for="event-info">Deixe sua mensagem</label>
-                            <textarea name="mensagem" id="event-info" placeholder="Escreva a sua mensagem"></textarea>
+                            <label for="event-mensagem">Deixe sua mensagem</label>
+                            <textarea name="mensagem" id="event-mensagem" placeholder="Escreva a sua mensagem"></textarea>
                         </div>
                     
                         <input class="button" type="submit" value="Enviar mensagem">
                     </form>
-                    
-                    
+
                     <div class="details-container">
                         <img id="img-details" src="assets/sent-messages-flatline.png" alt="">
     
@@ -229,9 +228,6 @@
                             <img class="icon" src="assets/mail.png" alt="">
                             <p>lafer@laferseg.com.br</p>
                         </section>
-
-                        
-                        
 
                         <ul class="wrapper">
 
@@ -258,6 +254,7 @@
         </footer>
 
         <script src="index.js"></script>
+        <script src="app.js"></script>
     </div>
 
 </body>
