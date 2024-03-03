@@ -4,6 +4,7 @@ require 'C:\xampp\htdocs\Projeto\vendor\autoload.php';
 
 // Agora você pode usar a classe PHPMailer sem problemas
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP; 
 use PHPMailer\PHPMailer\Exception;
 
 // Variáveis recebidas do formulário
@@ -47,36 +48,43 @@ $conexao->close();
 // Criar uma nova instância do PHPMailer
 $mail = new PHPMailer(true); // Passando 'true' habilita exceções para manipulação de erros
 
+// Adicione este bloco de código após a linha que fecha a conexão com o banco de dados
+// Criar uma nova instância do PHPMailer
+$mail_contato = new PHPMailer(true); // Passando 'true' habilita exceções para manipulação de erros
+
 try {
     // Configurar as configurações do servidor de e-mail
-    $mail->isSMTP(); // Define o método de envio como SMTP
-    $mail->Host       = 'smtp.gmail.com'; // Altere para o seu servidor SMTP
-    $mail->SMTPAuth   = true; // Ativar autenticação SMTP
-    $mail->Username   = 'rascunho628@gmail.com'; // Altere para o seu e-mail SMTP
-    $mail->Password   = '401330278coX!'; // Altere para a sua senha SMTP
-    $mail->SMTPSecure = 'tls'; // Criptografia TLS, também aceita 'ssl'
-    $mail->Port       = 587; // Porta TCP para conexão
+    $mail_contato->isSMTP(); // Define o método de envio como SMTP
+    $mail_contato->Host       = 'smtp.gmail.com'; // Altere para o seu servidor SMTP
+    $mail_contato->SMTPAuth   = true; // Ativar autenticação SMTP
+    $mail_contato->Username   = 'mailteste0303@gmail.com'; // Altere para o seu e-mail SMTP
+    $mail_contato->Password   = '2829217565'; // Altere para a sua senha SMTP
+    $mail_contato->SMTPSecure = 'tls'; // Criptografia TLS, também aceita 'ssl'
+    $mail_contato->Port       = 587; // Porta TCP para conexão
 
     // Definir remetente, destinatário, assunto e corpo do e-mail
-    $mail->setFrom($email, $nome . ' ' . $sobrenome);
-    $mail->addAddress('rascunho628@gmail.com'); // Endereço de e-mail de destino
-    $mail->Subject = 'Contato pelo Site';
-    $mail->isHTML(true); // Define o formato do e-mail como HTML
-    $mail->Body    = "
+    $mail_contato->setFrom('mailteste0303@gmail.com', 'Seu Nome'); // Altere para o seu nome
+    $mail_contato->addAddress($email); // Endereço de e-mail do destinatário, pegue do formulário
+
+    $mail_contato->Subject = 'Contato recebido';
+    $mail_contato->isHTML(true); // Define o formato do e-mail como HTML
+    $mail_contato->Body    = "
         <html>
-            <p><b>Nome: </b>$nome $sobrenome</p>
-            <p><b>Telefone: </b>$telefone</p>
-            <p><b>E-mail: </b>$email</p>
-            <p><b>Mensagem: </b>$mensagem</p>
+            <p>Obrigado por entrar em contato conosco, $nome $sobrenome!</p>
+            <p>Aqui estão os detalhes da sua mensagem:</p>
+            <p><b>Nome:</b> $nome $sobrenome</p>
+            <p><b>Telefone:</b> $telefone</p>
+            <p><b>E-mail:</b> $email</p>
+            <p><b>Mensagem:</b> $mensagem</p>
             <p>Este e-mail foi enviado em <b>$data_envio</b> às <b>$hora_envio</b></p>
         </html>
     ";
 
     // Enviar e-mail
-    $mail->send();
-    echo 'E-mail enviado com sucesso!';
+    $mail_contato->send();
+    echo 'E-mail de confirmação enviado com sucesso!';
 } catch (Exception $e) {
-    echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
+    echo "Erro ao enviar o e-mail de confirmação: {$mail_contato->ErrorInfo}";
 }
 
 // Redirecionar para uma página de confirmação após 3 segundos
