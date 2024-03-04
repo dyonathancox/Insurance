@@ -89,12 +89,7 @@ try {
 
 // Redirecionar para uma página de confirmação após 3 segundos
 echo '<script>';
-echo 'setTimeout(function(){';
-echo 'window.location.href = "index.html";';
-echo '}, 3000);'; // Tempo em milissegundos (3 segundos)
+echo 'alert("Sua mensagem foi enviada com sucesso!");'; // Exibe o alerta na tela
+echo 'window.location.href = "index.html";'; // Redireciona para a página inicial após o alerta
 echo '</script>';
-
-// Redirecionar para uma página de confirmação
-header("Location: index.html");
-exit();
 ?>
