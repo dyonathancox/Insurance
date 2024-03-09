@@ -1,17 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const scrollLeftBtn = document.querySelector(".scroll-left");
-    const scrollRightBtn = document.querySelector(".scroll-right");
-    const segurosList = document.querySelector(".seguros ul");
-
-    scrollLeftBtn.addEventListener("click", function() {
-        segurosList.scrollLeft -= 260;
-    });
-
-    scrollRightBtn.addEventListener("click", function() {
-        segurosList.scrollLeft += 260;
-    });
-});
-
 function menuShow() {
     let menuMobile = document.querySelector('.mobile-menu');
     if(menuMobile.classList.contains('open')){
@@ -22,3 +8,25 @@ function menuShow() {
         document.querySelector('.icon').src = "assets/close.png";
     }
 }
+
+const segurosList = document.getElementById('seguros-list');
+let isHovered = false;
+
+segurosList.addEventListener('mouseenter', () => {
+  isHovered = true;
+});
+
+segurosList.addEventListener('mouseleave', () => {
+  isHovered = false;
+});
+
+function scrollList() {
+  if (!isHovered) {
+    segurosList.scrollLeft += 600; // Incremento da rolagem (ajuste conforme necessário)
+    if (segurosList.scrollLeft >= (segurosList.scrollWidth - segurosList.clientWidth)) {
+      segurosList.scrollTo({ left: 0, behavior: 'smooth' }); // Volta para o início de forma suave
+    }
+  }
+}
+
+setInterval(scrollList, 28); // Intervalo de rolagem (ajuste conforme necessário)

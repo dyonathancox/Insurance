@@ -63,11 +63,19 @@ header{
     height: 10rem;
     justify-content: space-between;
     align-items: center;
+    
 }
 .nav-bar img {
     width: 10rem;
     display: flex;
     align-items: center;
+    transition: all 300ms ease-in-out;
+    
+}
+
+.nav-bar img:hover,
+.container:hover{
+    transform: scale(1.1);
 }
 
 .nav-list ul,
@@ -90,6 +98,7 @@ header{
     border-radius: 0.8rem;
     color: var(--color-base-red);
     border: 1px solid var(--color-base-red);
+    transition: all 200ms ease-in-out;
 }
 
 .mobile-menu-icon{
@@ -146,6 +155,7 @@ header{
     padding: 2rem;
     align-items: center;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    transition: all 300ms ease-in-out;
 }
 
 .square h2 {
@@ -186,58 +196,54 @@ header{
     padding-top: 0;
     display: flex;
     align-items: center;
-    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
-    position: relative; /* Para os botões serem posicionados relativamente */
-}
-
-.scroll-left,
-.scroll-right {
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 1;
-
-}
-.scroll-left img,
-.scroll-right img{
-    width: 3rem;
-}
-
-.seguros ul {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .seguros ul {
     display: flex;
     align-items: center;
     overflow-x: auto;
-    scroll-behavior: smooth; /*rolagem suave*/
+    scroll-behavior: smooth;
     padding: 2rem;
     margin-left: 2rem;
-    margin-right: 2rem; 
+    margin-right: 2rem;
     gap: 1.5rem;
     list-style: none;
     justify-content: space-between;
-}
-
-.seguros ul::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem do navegador Chrome/Safari */
-}
-
-.seguros ul li {
+  }
+  
+  .seguros ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .seguros ul li {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     border-radius: 2rem;
     height: 10rem;
     padding: 1.5rem;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-    flex: 0 0 20rem; /* Define o tamanho fixo dos itens para que todos tenham o mesmo tamanho */
-}
-
-.seguros ul li:last-child {
-    margin-right: 0; /* Remove o espaço à direita do último item */
-}
-
-.seguros ul li img {
+    flex: 0 0 20rem;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .seguros ul li:hover {
+    transform: scale(1.1);
+  }
+  
+  .seguros ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .seguros ul li img {
     max-width: 100%;
     max-height: 100%;
-}
+  }
+  
+
+
 
 /*FORMULÁRIO*/
 .form{
@@ -416,14 +422,6 @@ form{
     background: #40e45b;
     color: #ffffff;
 }
-/*
-.details:nth-child(-n+2) {
-    
-    margin-bottom: 1.5rem; /* Ajuste o valor do margin-bottom conforme necessário 
-}*/
-
-
-
 
 input:invalid{
     border: 1x solid red;
@@ -449,13 +447,6 @@ footer {
     animation: move .2s;
     --startY: 100%;
 }
-
-@keyframes move {
-    from {
-        transform: translateY(var(--startY));
-    }
-}
-
 .item {
     --delay: .4s;
     animation: appear .4s var(--delay) backwards;
@@ -470,7 +461,6 @@ footer {
         transform: scale(1.2);
     }
 }
-
 /* Adicione este código no final do seu arquivo CSS */
 
 /* Para telas com largura igual ou inferior a 320px */
@@ -527,7 +517,7 @@ footer {
     }
 
     .col-2 {
-        width: 40rem;
+        width: 38rem;
         position: absolute;
         top: 40%;
         left: 50%;
