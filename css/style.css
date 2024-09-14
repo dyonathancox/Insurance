@@ -1,3 +1,4 @@
+/* RESET E VARIÁVEIS GLOBAIS */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
 }
 
 :root {
-    font-size: 62.5%; /*divide o pixel por 10 para colocar medida em REM*/
+    font-size: 62.5%; /* 1rem = 10px */
     --hue: 300;
     --color-base-white: hsl(0, 0%, 100%);
     --color-base-red: #FF5656;
@@ -16,20 +17,20 @@
     --color-base-gray-line: #c4c4c4;
 }
 
+/* ESTILOS BÁSICOS */
 body {
     font-family: "Mulish", sans-serif;
     font-size: 1.6rem;
     color: var(--color-base-gray);
     background-color: var(--color-base-gray-100);
 }
-#container h1{
+#container h1 {
     text-align: center;
     line-height: 1;
-    color: var(--color-base-red);
     font-size: 3.2rem;
     font-weight: normal;
-    color: var(--color-base-red);
     padding-bottom: 4rem;
+    color: var(--color-base-red);
 }
 #container h1 span{
     font-weight: bold;
@@ -37,15 +38,13 @@ body {
     padding: .5rem;
 }
 #container p{
-    font-size: 1.8rem;
     font-weight: 500;
     line-height: 2;
-    color: var(--color-base-gray);
 }
 
 #geral,
 .soluctions-wrapper {
-    width: min(102.4rem, 100%);
+    width: min(122rem, 100%);
     margin: 0 auto;
     padding: 4rem 0 2rem;
 }
@@ -54,74 +53,72 @@ header{
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav-bar{
+.nav-bar {
     width: min(102.4rem, 100%);
     margin: auto;
     display: flex;
     padding: 1.5rem;
-    text-align: center;
-    height: 10rem;
     justify-content: space-between;
     align-items: center;
-    
-}
-.nav-bar img {
-    width: 10rem;
-    display: flex;
-    align-items: center;
-    transition: all 300ms ease-in-out;
-    
+    height: 10rem;
 }
 
-.nav-bar img:hover,
-.container:hover{
+.nav-bar img {
+    width: 10rem;
+    transition: transform 300ms ease-in-out;
+}
+
+.nav-bar img:hover, .container:hover {
     transform: scale(1.1);
 }
 
-.nav-list ul,
-.mobile-menu ul{
+.nav-list ul, .mobile-menu ul {
     display: flex;
-    justify-content: center;
     gap: 2rem;
     list-style: none;
 }
-.nav-list ul a,
-.mobile-menu ul a {
+
+.nav-list ul a, .mobile-menu ul a {
     text-decoration: none;
     color: var(--color-base-gray);
 }
 
-.nav-list ul li a:hover,
-.mobile-menu ul li a:hover {
+.nav-list ul li a:hover, .mobile-menu ul li a:hover {
     font-weight: bold;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 0.8rem;
     color: var(--color-base-red);
     border: 1px solid var(--color-base-red);
     transition: all 200ms ease-in-out;
 }
 
-.mobile-menu-icon{
+.mobile-menu-icon {
     display: none;
 }
+
 .mobile-menu{
     display: none;
 }
 
-.text-container,
-.soluctions-container,
-.form-container{
+
+/* TEXTOS E SEÇÕES */
+.text-container, .soluctions-container, .form-container, footer {
     width: 100%;
     background-color: var(--color-base-white);
 }
-.text,
-.about {
+
+.text, .about {
     display: flex;
     flex-direction: row;
-    
     text-align: center;
 }
-.col-2{
+
+.text-container p, .soluctions-container p, .form-container p, .about-container p {
+    font-size: 1.8rem;
+    text-align: justify;
+}
+
+.col-2 {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -148,15 +145,16 @@ header{
 }
 
 .container {
-    position: relative; /* Definir o posicionamento como relativo */
-    max-width: 30rem; /* Ajuste para ocupar toda a largura disponível */
+    position: relative;
+    max-width: 25rem;
     height: 45rem;
     border-radius: 2.5rem;
     padding: 2rem;
-    align-items: center;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    transition: all 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    align-items: center;
 }
+
 
 .square h2 {
     margin-top: 7rem;
@@ -170,8 +168,7 @@ header{
     font-weight: 500;
     padding: 1rem;
     text-align: center;
-    margin-top: 0; /* Remover margem superior */
-    margin-bottom: 1rem; /* Adicionar uma margem inferior fixa */
+    margin: 0 0 1rem;
 }
 
 .circle {
@@ -179,11 +176,10 @@ header{
     top: -8rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 15rem;
-    height: 15rem;
+    width: 13rem;
+    height: 13rem;
     background-color: var(--color-base-gray-100);
     border-radius: 50%;
-    overflow: hidden;
     padding: 2.5rem;
     display: flex;
     align-items: center;
@@ -248,10 +244,10 @@ header{
 /*FORMULÁRIO*/
 .form{
     display: flex;
+    
 }
 form{
-    width: 51rem;
-    margin-right: 1.5rem;
+    width: 50rem;
 }
 
 .col-3 {
@@ -273,9 +269,7 @@ form{
     padding-top: 2.5rem;
     font-size: 1.8rem;
     font-weight: bold;
-    line-height: 2.4rem;
     color: var(--color-base-gray);
-    margin-bottom: 8px;
 }
   
 .input-wrapper label span {
@@ -288,73 +282,99 @@ form{
 .input-wrapper label span:hover {
     color: #6c6a71;
 }
-  
-.input-wrapper input, 
-.input-wrapper textarea,
-.button,
-.agger-button{
+
+.input-wrapper input, .input-wrapper textarea, .button, .agger-button {
     background: #FAFAFC;
     border: 1px solid #E6E6F0;
     border-radius: 3rem;
     height: 5.6rem;
     padding: 2.4rem;
     font-size: 1.4rem;
-    line-height: 2.6rem;
     color: var(--color-base-gray);
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
+
 .input-wrapper textarea {
     padding: 2.4rem;
     height: 168px;
 }
 
-.button{
+.button {
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     background: var(--color-base-red);
     width: 100%;
     padding: 1.5rem;
-    border: none;
     font-weight: bold;
     color: white;
-    text-align: center;
+    cursor: pointer;
+    border: none;
 }
+
 .button:hover,
 .agger-button:hover{
     background: #c04141;
 }
 
-/*DETALHES*/
-.details-container {
-    width: 51rem;
+.img-form img{
+    width: 100%;
+}
+
+
+/*LOCATION*/
+
+.location-container {
+    width: min(122rem, 100%);
+    margin: 0 auto;
+    padding: 10rem 0;
+}
+
+.location {
     display: flex;
-    flex-direction: column;
-    gap: 2;
+    justify-content: space-between;
+    height: 100vh;
+    border: 0.1rem solid rgba(38, 38, 38, 0.3);
+    border-radius: 3rem;
 }
-.details{
+
+.location h2 {
+    font-size: 1.8rem;
+}
+.icons-container {
+    margin: 2.5rem 5rem 0 5rem; /* Margem ao redor da div */
+}
+
+.location .icons:nth-child(1) {
+    /* Estilos para o primeiro <span> */
+    border-bottom: .1rem solid rgba(38, 38, 38, 0.2);
+}
+.location .icons:nth-child(2) {
+    /* Estilos para o primeiro <span> */
+    border-bottom: .1rem solid rgba(38, 38, 38, 0.2);
+}
+
+.details {
     display: grid;
-    grid-template-columns: 0.1fr 1fr;
-    grid-auto-rows: auto auto auto auto;
-    text-align: center;
-    
+    grid-template-columns: 0.2fr auto;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
 }
-#img-details{
-    width: 90%;
-    
-}
-.details h2{
-    grid-column: 1 /span 2;
+
+.details h2 {
+    grid-column: 1 / span 2;
     color: var(--color-base-red);
     font-weight: bold;
+    margin: 2.5rem 0;
 }
-.details p{
-    font-size: 1.4rem;
-    font-weight: 550;
+.location p{
+    font-size: 1.6rem;
     text-align: left;
 }
 .details .icon{
     width: 2.4rem;
     height: 2.4rem;
     place-self: center;
+    margin-right: 1.5rem;
 }
 
 .details .icon:nth-of-type(1),
@@ -365,6 +385,7 @@ form{
 
 .wrapper {
     display: inline-flex;
+    margin-top: 3rem;
     list-style: none;
 }
 
@@ -387,15 +408,20 @@ form{
 }
 
 .agger-button{
-    width: 20rem;
+    display: flex;
+    width: 100%;
     padding: 1.5rem;
-    margin: 1rem;
-    text-align: center;
+    margin-top: 2rem;
+    background-color: var(--color-base-red);
+    cursor: pointer;
+    justify-content: center;
+}
+.agger-button a {
     font-weight: bold;
     color: white;
-    background-color: var(--color-base-red);
 }
-.wrapper a{
+.wrapper a,
+.agger-button a{
     text-decoration: none;
 }
 
@@ -426,6 +452,14 @@ form{
 input:invalid{
     border: 1x solid red;
 }
+
+iframe {
+    border-radius: 0 3rem 3rem 0;
+    flex: 1; /* Faz o iframe ocupar o espaço restante */
+    height: 100%; /* Garante que ele preencha 100% da altura disponível */
+    min-height: 0; /* Evita que o iframe extrapole a altura */
+}
+
 /*FOOTER*/
 
 .footer-container{
@@ -452,6 +486,9 @@ footer {
     animation: appear .4s var(--delay) backwards;
 }
 
+
+
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -461,7 +498,7 @@ footer {
         transform: scale(1.2);
     }
 }
-/* Adicione este código no final do seu arquivo CSS */
+
 
 /* Para telas com largura igual ou inferior a 320px */
 @media only screen and (max-width: 767px) {
@@ -554,6 +591,7 @@ footer {
         margin-right: 20px; /* Adiciona um espaçamento entre as seções */
     }
     .container {
+        margin-top: 5rem;
         display: flex;
         width: 40rem;
         align-items: center; /* Alinha os itens verticalmente */
@@ -592,6 +630,21 @@ footer {
     .details-container,
     .details{
         padding-top: 3rem;
+    }
+    .img-form{
+        display: none;
+    }
+    .location{
+        height: 100%;
+    }
+    .agger-button {
+        display: flex; /* Define o elemento como flexbox */
+        justify-content: center; /* Centraliza o conteúdo horizontalmente */
+        align-items: center; /* Centraliza o conteúdo verticalmente, se aplicável */
+        margin: 2.5rem auto; /* Centraliza o próprio botão no contêiner */
+    }
+    iframe{
+        display: none;
     }
 }
 

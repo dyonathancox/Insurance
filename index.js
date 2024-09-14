@@ -22,11 +22,16 @@ segurosList.addEventListener('mouseleave', () => {
 
 function scrollList() {
   if (!isHovered) {
-    segurosList.scrollLeft += 600; // Incremento da rolagem (ajuste conforme necessário)
+    segurosList.scrollBy({ left: 1, behavior: 'smooth' }); // Rolagem contínua suave
+
+    // Verifica se chegou ao final
     if (segurosList.scrollLeft >= (segurosList.scrollWidth - segurosList.clientWidth)) {
-      segurosList.scrollTo({ left: 0, behavior: 'smooth' }); // Volta para o início de forma suave
+      segurosList.scrollLeft = 0; // Volta imediatamente para o início
     }
   }
+
+  requestAnimationFrame(scrollList); // Continua o loop de rolagem
 }
 
-setInterval(scrollList, 28); // Intervalo de rolagem (ajuste conforme necessário)
+// Inicia o loop
+requestAnimationFrame(scrollList);
