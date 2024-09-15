@@ -332,7 +332,7 @@ form{
 .location {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
+    height: 75vh;
     border: 0.1rem solid rgba(38, 38, 38, 0.3);
     border-radius: 3rem;
 }
