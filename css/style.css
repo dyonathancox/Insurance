@@ -108,7 +108,7 @@ header{
 }
 
 .text, .about {
-    
+    height: 100vh;
     width: 50%;
     display: flex;
     flex-direction: row;
