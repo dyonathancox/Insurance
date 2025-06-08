@@ -78,8 +78,8 @@ header {
 
 .nav-list ul a,
 .mobile-menu ul a {
-  padding: .5rem;
-  border: .1rem solid transparent;
+  padding: 0.5rem;
+  border: 0.1rem solid transparent;
   transition: all 200ms ease-in-out;
   border-radius: 0.8rem;
   text-decoration: none;
@@ -115,7 +115,7 @@ footer {
 
 .text,
 .about {
-  min-height: 100vh;
+  min-height: calc(100vh - 10rem);
   width: 50%;
   display: flex;
   flex-direction: row;
@@ -604,10 +604,19 @@ footer {
   }
 
   .text section {
-    display: flex; /* Altera o layout para flexbox */
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .text,
+  .about {
+    min-height: auto;
+    width: 100%;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    text-align: center;
+    justify-content: center;
   }
   #img-details {
     display: none;
@@ -706,6 +715,15 @@ footer {
     align-items: center;
     text-align: center;
   }
+  .text,
+  .about {
+    min-height: auto;
+    width: 100%;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    text-align: center;
+    justify-content: center;
+  }
   .form-container #img-details {
     display: none;
   }
@@ -755,5 +773,4 @@ footer {
   .details-container #img-details {
     display: block;
   }
-  
 }
